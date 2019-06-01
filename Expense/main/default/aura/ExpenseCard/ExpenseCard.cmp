@@ -6,6 +6,11 @@
     <lightning:layoutItem size="12" mediumDeviceSize="6" largeDeviceSize="3" padding="around-small">
         <lightning:card title="{!v.expense.Name}"
                         class="{! v.expense.Approved__c ? (v.expense.Reimbursed__c ? 'green' : 'yellow') : 'red' }">
+
+            <aura:set attribute="actions">
+                <lightning:button variant="brand" label="View" onclick="{!c.navigateToExpense}"/>
+            </aura:set>
+
             <table>
                 <tr>
                     <th class="header">Amount:</th>
